@@ -26,10 +26,11 @@ namespace COMP003B.Assignment4.Controllers
 			{
 				return NotFound();
 			}
-			
+
 			return View(trail);
 		}
 
+		[Route("trails/featured/{slug?}")]
 		public IActionResult Featured(string? slug)
 		{
 			ViewData["Title"] = "Featured Trail";
