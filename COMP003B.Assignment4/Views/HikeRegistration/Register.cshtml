@@ -1,0 +1,44 @@
+﻿@model COMP003B.Assignment4.Models.HikeRegistration
+
+@{
+    ViewData["Title"] = "Hike Registration";
+}
+
+<h2>Register for a Hike</h2>
+
+<form asp-action="Register" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div>
+        <label asp-for="FullName"></label>
+        <input asp-for="FullName" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="GroupSize"></label>
+        <input asp-for="GroupSize" />
+        <span asp-validation-for="GroupSize" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="TrailId"></label>
+        <input asp-for="TrailId" />
+        <span asp-validation-for="TrailId" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Notes"></label>
+        <input asp-for="Notes" />
+        <span asp-validation-for="Notes" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Submit Registration</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");    
+    }
+}
