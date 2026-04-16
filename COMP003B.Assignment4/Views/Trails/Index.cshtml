@@ -1,0 +1,14 @@
+﻿@model List<COMP003B.Assignment4.Models.Trail>
+
+@{
+    ViewData["Title"] = "Trail List";
+}
+
+<h2>Available Trails</h2>
+
+@foreach (var trail in Model)
+{
+    <partial name="_TrailCard" model="trail" />
+    <a asp-controller="Trails" asp-action="Details" asp-route-id="@trail.Id">View Details</a>
+    <hr />
+}

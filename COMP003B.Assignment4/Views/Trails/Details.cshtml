@@ -1,0 +1,13 @@
+﻿@model COMP003B.Assignment4.Models.Trail
+
+@{
+    ViewData["Title"] = "Trail Details";
+}
+
+<h2>Trail Details</h2>
+
+<partial name="_TrailCard" model="Model" />
+
+<p>
+    <a asp-controller="HikeRegistration" asp-action="Register">Register for this hike</a>
+</p>
