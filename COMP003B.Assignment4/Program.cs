@@ -1,3 +1,5 @@
+using COMP003B.Assignment4.Middleware;
+
 namespace COMP003B.Assignment4
 {
 	public class Program
@@ -20,11 +22,17 @@ namespace COMP003B.Assignment4
 			}
 
 			app.UseHttpsRedirection();
+
+			app.UseStaticFiles();
+
+			app.UseMiddleware<RequestLoggingMiddleware>();
+
 			app.UseRouting();
 
 			app.UseAuthorization();
 
 			app.MapStaticAssets();
+
 			app.MapControllerRoute(
 				name: "default",
 				pattern: "{controller=Home}/{action=Index}/{id?}")
