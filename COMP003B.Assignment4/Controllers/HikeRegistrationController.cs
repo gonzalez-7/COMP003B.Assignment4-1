@@ -6,6 +6,7 @@ namespace COMP003B.Assignment4.Controllers
 	[Route("hikes")]
 	public class HikeRegistrationController : Controller
 	{
+		//mb
 		[HttpGet("register")]
 		public IActionResult Register()
 		{
